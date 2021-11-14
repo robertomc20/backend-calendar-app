@@ -34,6 +34,7 @@ app.use(express.json());
 // En la linea de abajo, basicamente, el require es el archivo a importar, y lo va habilitar en la ruta senalada
 app.use('/api/auth', require('./routes/auth'));
 // TODO: crud: eventos
+app.use('/api/events', require('./routes/events'));
 
 
 // Escuchamos las peticiones
