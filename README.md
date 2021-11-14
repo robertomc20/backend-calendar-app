@@ -1,0 +1,3 @@
+# backend-calendar-app
+Back-end hecho en NodeJS con ExpressJs para la app calendar-app, algunas de las tecnologias/librerias 
+que utilice fueron:  MongoDB, MongoAtlas, Mongoose, JWT, CORS, bcryptjs, express-validator, entre otras...
