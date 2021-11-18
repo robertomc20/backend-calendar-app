@@ -13,7 +13,7 @@ const registerUser = async (req, res = response) => {
         if (user) {
             return res.status(400).json({
                 ok: false,
-                msg: "A user already exists with that email"
+                msg: "Ya existe un usuario con ese email"
             });
         }
 
@@ -38,7 +38,7 @@ const registerUser = async (req, res = response) => {
         console.log(error);
         return res.status(500).json({
             ok: false,
-            msg: "Please talk to the admin"
+            msg: "Por favor hable con el administrador"
         });
     }
 };
@@ -53,7 +53,7 @@ const loginUser = async (req, res = response) => {
         if (!user) {
             return res.status(400).json({
                 ok: false,
-                msg: "Invalid email or password"
+                msg: "Email o contraseña inválida"
             });
         }
 
@@ -63,7 +63,7 @@ const loginUser = async (req, res = response) => {
         if (!validPassword) {
             return res.status(400).json({
                 ok: false,
-                msg: "Invalid password"
+                msg: "Contraseña inválida"
             });
         }
 
@@ -80,7 +80,7 @@ const loginUser = async (req, res = response) => {
         console.log(error);
         return res.status(500).json({
             ok: false,
-            msg: "Please talk to the admin"
+            msg: "Por favor hable con el administrador"
         });
     }
 };
@@ -91,8 +91,10 @@ const renewToken = async (req, res = response) => {
     // Generar nuevo JWT y se retorna en esta peticion
     const token = await generateJWT(uid, name);
 
-    res.json({
+    res.status(201).json({
         ok: true,
+        uid,
+        name,
         token
     });
 };

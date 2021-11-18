@@ -27,7 +27,7 @@ const createEvent = async (req, res = response) => {
         console.log(error);
         res.status(500).json({
             ok: false,
-            msg: "Please talk to the admin"
+            msg: "Por favor hable con el administrador"
         });
     }
 };
@@ -42,14 +42,14 @@ const updateEvent = async (req, res = response) => {
         if (!event) {
             return res.status(404).json({
                 ok: false,
-                msg: "Event does not exist with that id"
+                msg: "No existe un evento con ese ID"
             });
         }
 
         if (event.user.toString() !== uid) {
             return res.status(401).json({
                 ok: false,
-                msg: "You do not have permission to edit this event"
+                msg: "No tienes permiso para editar este evento"
             });
         }
 
@@ -72,7 +72,7 @@ const updateEvent = async (req, res = response) => {
         console.log(error);
         return res.status(500).json({
             ok: false,
-            msg: "Please talk to the admin"
+            msg: "Por favor hable con el administrador"
         });
     }
 };
@@ -87,14 +87,14 @@ const deleteEvent = async (req, res = response) => {
         if (!event) {
             return res.status(404).json({
                 ok: false,
-                msg: "Event does not exist with that id"
+                msg: "No existe un evento con ese ID"
             });
         }
 
         if (event.user.toString() !== uid) {
             return res.status(401).json({
                 ok: false,
-                msg: "You do not have permission to delete this event"
+                msg: "No tienes permiso para eliminar este evento"
             });
         }
 
@@ -107,7 +107,7 @@ const deleteEvent = async (req, res = response) => {
         console.log(error);
         res.status(500).json({
             ok: false,
-            msg: "Please talk to the admin"
+            msg: "Por favor hable con el administrador"
         });
     }
 };
